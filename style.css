@@ -1,0 +1,80 @@
+body {
+    background-color: #0D4D4D;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* nav section */
+img {
+    height: 20px;
+    margin: 5px;
+    transition: all 0.5s;
+}
+
+img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+#leftarrow {
+    transform: scaleX(-1);
+}
+
+#leftarrow:hover {
+    transform: scale(-1.5, 1.5);
+}
+
+/* calendar section*/
+
+.calendar {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    cursor: pointer;
+
+}
+
+td {
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.day:hover {
+    background-color: #428282;
+    cursor: pointer;
+}
+
+/* Today section */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span {
+    font-style: italic;
+    color: #849BA0;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+li {
+    /* color: #283234; */
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #82969A;
+}
