@@ -38,6 +38,7 @@ function changeBackground(hour) {
 function checkNextTime(hour, minutes) {
     let hrLeft;
     let minLeft = 60-minutes
+
     if (hour < 8) {
         hrLeft = 7-hour;
     } else if (hour < 12) {
@@ -48,7 +49,9 @@ function checkNextTime(hour, minutes) {
     } else {
         hrLeft = 31-hour;
     }
-    return `${hrLeft}:${minLeft} left to next time`;
+    let mins = (minLeft < 10) ? "0" + minLeft : minLeft;
+    let hr = (hrLeft < 10) ? "0" + hrLeft : hrLeft;
+    return `${hr}:${mins} left to next time`;
 
 }
 
