@@ -2,6 +2,8 @@ const days = ["s√∏ndag", "mandag", "tirsdag", "onsdag", "torsdag", "fredag", "l√
 const months = ["jan", "feb", "mar"];
 const d = new Date();		// date and time now
 const body = document.querySelector("body");
+const countdown = document.querySelector("#countdown");
+
 
 // set header to name of day and date
 const day = document.querySelector("#dayHeader");
@@ -15,6 +17,7 @@ const hour = d.getHours();
 const minutes = d.getMinutes();
 let mins = (minutes < 10) ? "0" + minutes : minutes;
 time.textContent = `${hour}:${mins}`;
+
 
 // change color by time
 function changeBackground(hour) {
@@ -31,4 +34,25 @@ function changeBackground(hour) {
     body.style.background = color;
 }
 
+
+function checkNextTime(hour, minutes) {
+    let hrLeft;
+    let minLeft = 60-minutes
+    if (hour < 8) {
+        hrLeft = 7-hour;
+    } else if (hour < 12) {
+        hrLeft = 11-hour;
+    } else if (hour < 17) {
+        hrLeft = 16-hour;
+        console.log(hrLeft);
+    } else {
+        hrLeft = 31-hour;
+    }
+    return `${hrLeft}:${minLeft} left to next time`;
+
+}
+
+
 changeBackground(hour);
+
+countdown.textContent = checkNextTime(hour, minutes);
